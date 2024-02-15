@@ -22,7 +22,7 @@ def total_salary(path):
     return total, average                        
 
 
-total, average = total_salary(r"/Users/juliia/Desktop/GoIt_hw/Text-04_01.txt")
+total, average = total_salary(r"path/to/salary_file.txt")
 print(f"Загальна сума заробітної плати: {total}, Середня заробітна плата: {average}")
 
 # if total is not None and average is not None:
