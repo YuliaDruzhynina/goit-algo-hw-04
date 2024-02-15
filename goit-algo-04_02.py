@@ -8,7 +8,7 @@ def get_cats_info(path):
             file_text = file.readlines()
             
             for line in file_text:              
-                id, name, age = line.strip().split(',')                           
+                id, name, age = line.strip().split(',')                                         
                 cats_info = {'id': id,'name': name,'age': age}
                 result_dict.append(cats_info)
 
@@ -20,4 +20,4 @@ def get_cats_info(path):
     return result_dict
 
 cats_info = get_cats_info(r"path/to/cats_file.txt")  
-print(cats_info)                 
+print(cats_info)                           
