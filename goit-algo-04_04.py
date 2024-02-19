@@ -1,5 +1,7 @@
+import sys
+
 def parse_input(user_input):
-    cmd, *args = user_input.split()         #команда, данные
+    cmd, *args = user_input.split() #переменные из списка:команда, данные
     cmd = cmd.strip().lower()
     return cmd, *args
 
@@ -9,24 +11,25 @@ def add_contact(args, contacts):
     return "Contact added."
 
 def change_contact(args, contacts):
-    if args[0] in contacts:
+    if args[0] in contacts.keys():
         add_contact(args, contacts)
     else:        
-        return "Contact updated." 
+        return "Contact added." 
 
 def show_phone(args,contacts):
     name = args[0]
     return contacts[name]
 
 def show_all(args,contacts):
+    
     all_contact=''
     for key in contacts:
-        all_contact+=f"{key} : {contacts[key]}\n"
+        all_contact+=(f"{key} : {contacts[key]}\n")
     return all_contact  
 
 def main():
     contacts = {'John':"123", 'Jane':"234", 'Steve':"555"}  #    [{'name':'John Doe', 'phone':'+380988858880'},
-    print("Welcome to the assistant bot!")
+    print("Welcome to the assistant bot, Ulyana!")
     while True:
         user_input = input("Enter a command: ")
         command, *args = parse_input(user_input)
